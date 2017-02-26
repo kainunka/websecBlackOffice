@@ -1,0 +1,267 @@
+<!--
+  Generated template for the Home page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>Black Office WEBSEX 18 PLUS</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="background-color: #212121;" padding>
+
+
+  <ion-fab top right edge *ngIf="checkData == 'Clip'">
+      <button ion-fab mini color="light" (click)="clickAddClip(name, urlCover, urlVideo, description, category, tag1, tag2, tag3, tag4, tag5, tag6, tag7, pb)"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
+  <ion-fab top right edge *ngIf="checkData == 'JavUn'">
+  <button ion-fab mini color="light" (click)="clickAddJavUn(name, urlCover, urlVideo, description, category, tag1, tag2, tag3, tag4, tag5, tag6, tag7, tag8, tag9, tag10, tag11, tag12, tag13, tag14, tag15, tag16, tag17, pb)"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
+  <ion-fab top right edge *ngIf="checkData == 'JavCen'">
+  <button ion-fab mini color="light" (click)="clickAddJavCen(name, urlCover, urlVideo, description, category, tag1, tag2, tag3, tag4, tag5, tag6, tag7, tag8, tag9, tag10, tag11, tag12, tag13, tag14, tag15, tag16, tag17, pb)"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
+  <ion-fab top right edge *ngIf="checkData == 'JavEur'">
+  <button ion-fab mini color="light" (click)="clickAddEur(name, urlCover, urlVideo, description, category, tag1, pb)"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
+
+  <div class="con">
+
+
+  <ion-list>
+
+  <div>
+    <img src="assets/logo.png" class="img" alt="">
+  </div>
+
+
+  <ion-item >
+    <ion-label>Name</ion-label>
+    <ion-input type="text" [(ngModel)]="name" required placeholder=".........."></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>URL Cover Picture</ion-label>
+    <ion-textarea [(ngModel)]="urlCover" required placeholder=".........."></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>URL Video</ion-label>
+    <ion-textarea [(ngModel)]="urlVideo" required placeholder=".........."></ion-textarea>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>Description</ion-label>
+    <ion-textarea [(ngModel)]="description" required placeholder=".........."></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Category</ion-label>
+    <ion-select [(ngModel)]="category" (ionChange)="onChange($event)">
+      <ion-option [value]="Clip">Clip</ion-option>
+      <ion-option [value]="AV">JAV Collector (UNCENSORED)</ion-option>
+      <ion-option [value]="AV">JAV Collector (CENSORED)</ion-option>
+      <ion-option [value]="Picture">Europe Collector</ion-option>
+    </ion-select>
+  </ion-item>
+
+
+  <ion-item *ngIf="tagDataClip">
+  <ion-label>{{tagDataClip[0].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag1"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataClip">
+  <ion-label>{{tagDataClip[1].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag2"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataClip">
+  <ion-label>{{tagDataClip[2].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag3"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataClip">
+  <ion-label>{{tagDataClip[3].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag4"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataClip">
+  <ion-label>{{tagDataClip[4].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag5"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataClip">
+  <ion-label>{{tagDataClip[5].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag6"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataClip">
+  <ion-label>{{tagDataClip[6].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag7"></ion-checkbox>
+  </ion-item>
+
+
+  <ion-item *ngIf="tagDataJavUn">
+  <ion-label>{{tagDataJavUn[0].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag1"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavUn">
+  <ion-label>{{tagDataJavUn[1].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag2"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavUn">
+  <ion-label>{{tagDataJavUn[2].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag3"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavUn">
+  <ion-label>{{tagDataJavUn[3].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag4"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavUn">
+  <ion-label>{{tagDataJavUn[4].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag5"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavUn">
+  <ion-label>{{tagDataJavUn[5].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag6"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavUn">
+  <ion-label>{{tagDataJavUn[6].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag7"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavUn">
+  <ion-label>{{tagDataJavUn[7].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag8"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavUn">
+  <ion-label>{{tagDataJavUn[8].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag9"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavUn">
+  <ion-label>{{tagDataJavUn[9].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag10"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavUn">
+  <ion-label>{{tagDataJavUn[10].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag11"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavUn">
+  <ion-label>{{tagDataJavUn[11].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag12"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavUn">
+  <ion-label>{{tagDataJavUn[12].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag13"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavUn">
+  <ion-label>{{tagDataJavUn[13].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag14"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavUn">
+  <ion-label>{{tagDataJavUn[14].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag15"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavUn">
+  <ion-label>{{tagDataJavUn[15].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag16"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavUn">
+  <ion-label>{{tagDataJavUn[16].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag17"></ion-checkbox>
+  </ion-item>
+
+  <ion-item *ngIf="tagDataJavCen">
+  <ion-label>{{tagDataJavCen[0].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag1"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavCen">
+  <ion-label>{{tagDataJavCen[1].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag2"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavCen">
+  <ion-label>{{tagDataJavCen[2].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag3"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavCen">
+  <ion-label>{{tagDataJavCen[3].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag4"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavCen">
+  <ion-label>{{tagDataJavCen[4].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag5"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavCen">
+  <ion-label>{{tagDataJavCen[5].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag6"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavCen">
+  <ion-label>{{tagDataJavCen[6].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag7"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavCen">
+  <ion-label>{{tagDataJavCen[7].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag8"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavCen">
+  <ion-label>{{tagDataJavCen[8].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag9"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavCen">
+  <ion-label>{{tagDataJavCen[9].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag10"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavCen">
+  <ion-label>{{tagDataJavCen[10].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag11"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavCen">
+  <ion-label>{{tagDataJavCen[11].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag12"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavCen">
+  <ion-label>{{tagDataJavCen[12].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag13"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavCen">
+  <ion-label>{{tagDataJavCen[13].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag14"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavCen">
+  <ion-label>{{tagDataJavCen[14].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag15"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavCen">
+  <ion-label>{{tagDataJavCen[15].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag16"></ion-checkbox>
+  </ion-item>
+  <ion-item *ngIf="tagDataJavCen">
+  <ion-label>{{tagDataJavCen[16].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag17"></ion-checkbox>
+  </ion-item>
+
+  <ion-item *ngIf="tagDataEur">
+  <ion-label>{{tagDataEur[0].tag}}</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="tag1"></ion-checkbox>
+  </ion-item>
+
+
+
+
+
+  <ion-item>
+  <ion-label>Public</ion-label>
+  <ion-toggle color="secondary" checked="true" [(ngModel)]="pb"></ion-toggle>
+  </ion-item>
+
+
+
+</ion-list>
+<button ion-button full round>See All</button>
+
+
+  </div>
+
+</ion-content>
